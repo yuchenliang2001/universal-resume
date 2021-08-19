@@ -7,40 +7,47 @@
   <meta name="keywords" content="resume,cv,Marko Marković">
   <meta name="author" content="Marko Marković">
   <!-- <meta name="robots" content="noindex"> -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=chrome">
   <!-- <link rel="preload" href="./fonts/FiraGO-Regular.latin.woff2" as="font" crossorigin="anonymous"> -->
   <link href="./build.css" rel="stylesheet">
+<<<<<<< Updated upstream
   <title>Marko Marković — Resume</title>
+=======
+  <title>Josh Wood — Resume</title>
+  
+>>>>>>> Stashed changes
   <!-- Style of the navigation bar -->
-  <style type=text/css>
-  .nav ul {
+  <!-- Adjust the paddings here -->
+  <style>
+  .nav {
     width: 100%;
     height: 50px;
-    list-style-type: none;
+    background-color: #34495E;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    float: left;
+  }
+  .nav ul {
+    list-style: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #34495E;
+    white-space: nowrap;
   }
-  .nav li {
-    float: left;
+  .nav ul li {
+    display: inline-block;
   }
-  .nav li a {
-    display: block;
+  .nav a {
     color: white;
     font-family: FiraGO;
-    text-align: center;
     padding: 14px 16px;
-    text-decoration: none;
+    display: inline-block;
   }
-  .nav li a:hover:not(.active) {
+  .nav .mid a:hover {
     background-color: #97A2AF;
   }
-  .nav .home {
-    border-right: 2px solid #bbb;
-  }
-  .nav .blog {
+  .nav .highlight {
     background-color: #17A589;
   }
   </style>
@@ -48,18 +55,28 @@
 
 <body>
   <div class="nav">
-    <nav>
-      <ul>
-        <li><a class="home" href="#top"><b>Home</b></a></li>
-        <li><a href="#about me">About Me</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li style="float:right"><a class="blog" href="#blog">Blog</a></li>
-      </ul>
-    </nav>
+    <ul>
+      <li style="float:left"><a class="highlight" href="#top"><b>Home</b></a></li>
+      <li>
+        <div class="mid" style="width: calc(96vw - 96px - 4rem); overflow-x: scroll; overflow-y: hidden;">
+          <a href="#about me">About Me</a>
+          <a href="#experience">Experience</a>
+          <a href="#education">Education</a>
+          <a href="#projects">Projects</a>
+          <a href="#projects">Test1</a>
+          <a href="#projects">Test2</a>
+          <a href="#projects">Test3</a>
+          <a href="#projects">Test4</a>
+          <a href="#projects">Test5</a>
+          <a href="#projects">Test6</a>
+          <a href="#projects">Test7</a>
+          <a href="#projects">Test8</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </li>
+      <li style="float:right"><a class="highlight" href="#blog">Blog</a></li>
+    </ul>
   </div>
   <!-- The navigation bar -->
 
@@ -82,7 +99,7 @@
       </header>
       <!-- end Name -->
 
-      <!-- Column -->
+      <!-- Text Column -->
       <div class="md:col-count-2 print:col-count-2 col-gap-md md:h-letter-col print:h-letter-col col-fill-auto">
 
         <section class="mt-8 first:mt-0">
