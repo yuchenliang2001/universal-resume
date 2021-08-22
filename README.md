@@ -1,6 +1,11 @@
+
 Universal Résumé Template
 ---------
+**Description**
 
+This repo is a fork and an adapted version of the original [universal-resume](https://github.com/WebPraktikos/universal-resume) repository. We added features such as a navigation bar and a back-to-top button.
+
+---------
 Minimal and formal résumé (CV) website template for print, mobile, and desktop. The proportions are the same on the screen and paper. Built with amazing [Tailwind CSS](https://tailwindcss.com/).
 
 [Letter Size Demo](https://universal-resume.netlify.app/) | [Multiple Pages Demo](https://universal-resume-pages.netlify.app/) | [A4 Size Demo](https://universal-resume-a4.netlify.app/) | [Mobile Demo](https://www.responsinator.com/?url=https%3A%2F%2Funiversal-resume-pages.netlify.app%2F)
