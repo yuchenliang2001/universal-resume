@@ -30,16 +30,8 @@
     padding-left: 2vw;
     padding-right: 2vw;
     float: left;
-  }
-  .nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
     overflow: hidden;
     white-space: nowrap;
-  }
-  .nav ul li {
-    display: inline-block;
   }
   .nav a {
     color: white;
@@ -50,41 +42,31 @@
   .nav .mid a:hover {
     background-color: #97A2AF;
   }
-  .nav .highlight {
-    background-color: #17A589;
-  }
 
   /* Set initial display of dropdown to none */
   .nav a.icon {
     display: none;
   }
-  /* When the screen is less than 600 pixels wide, hide middle section and blog, show vertical dropdown */
-  @media screen and (max-width: 600px) {
-    .nav li:not(:first-child, :last-child) {
+  /* When the screen is less than 800 pixels wide, hide middle section and blog, show vertical dropdown */
+  @media screen and (max-width: 900px) {
+    .nav .mid, .nav .blog{
       display: none;
     }
     .nav a.icon {
       display: block;
     }
+    .nav.responsive .mid {
+      display: block;
+    }
     .nav.responsive {
+      display: block;
       height: inherit;
       position: absolute;
     }
-    .nav.responsive a {
-      display: block;
-    }
-    .nav.responsive ul {
-      overflow-x: hidden;
-      overflow-y: visible;
-      white-space: inherit;
-    }
-    .nav.responsive li {
-      float: none;
+    .nav.responsive .mid a {
       display: block;
       text-align: left;
-    }
-    .nav.responsive li:nth-last-child(2) {
-      display: none;
+      width: calc(97vw - 20px - 16rem);
     }
   }
   </style>
@@ -92,40 +74,33 @@
 
 <body>
   <div class="nav" id="nav">
-    <ul>
-      <li>
-        <!-- Name -->
-        <header class="flex items-center" style="float:left; font-family: FiraGO">
-          <!-- Container for the initials -->
-          <a class="initials-container mr-5 text-base leading-none text-white font-medium"
-            style="padding-bottom: 0.65rem; padding-top: 0.6875rem; background-color: #17A589"
-            href="#top">
-            <div class="initial text-center">J</div>
-            <div class="text-center initial">W</div>
-          </a>
-          <h1 class="text-2xl font-semibold text-white" style="padding-right:15px">
-            Josh Wood
-          </h1>
-        </header>
-      </li>
-      <li>
-        <div class="mid" style="width:calc(97vw - 40px - 16rem); overflow-x:scroll; overflow-y:hidden; float:left">
-          <a href="#about me">About Me</a>
-          <a href="#experience">Experience</a>
-          <a href="#education">Education</a>
-          <a href="#projects">Projects</a>
-          <a href="#skills">Skills</a>
-          <a href="#contact">Contact</a>
-          <a href="">Test1</a>
-          <a href="">Test2</a>
-          <a href="">Test3</a>
-          <a href="">Test4</a>
-          <a href="">Test5</a>
-        </div>
-      </li>
-      <li style="float:right"><a class="highlight" href="#blog">Blog</a></li>
-      <li style="float:right"><a href="javascript:void(0)" class="icon" onclick="myFunction()">&#9776;</a></li>
-    </ul>
+    <!-- Name -->
+    <header class="flex items-center" style="float:left; font-family: FiraGO">
+      <!-- Container for the initials -->
+      <a class="initials-container mr-5 text-base leading-none text-white font-medium"
+        style="padding-bottom: 0.65rem; padding-top: 0.6875rem; background-color: #17A589"
+        href="#top">
+        <div class="initial text-center">J</div>
+        <div class="text-center initial">W</div>
+      </a>
+      <h1 class="text-2xl font-semibold text-white" style="padding-right:15px">
+        Josh Wood
+      </h1>
+    </header>
+
+    <!-- Mid -->
+    <div class="mid" style="width:fit-content; overflow:hidden; float:left">
+      <a href="#about me">About Me</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <!-- Blog -->
+    <a style="float:right; background-color: #17A589;" class="blog" href="#blog">Blog</a>
+    <a style="float:right" href="javascript:void(0)" class="icon" onclick="myFunction()">&#9776;</a>
   </div>
   <!-- The navigation bar -->
 
