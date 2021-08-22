@@ -39,7 +39,10 @@
     padding: 14px 16px;
     display: inline-block;
   }
-  .nav .mid a:hover {
+  .nav .blog {
+    float: right;
+  }
+  .nav a:hover {
     background-color: #97A2AF;
   }
 
@@ -49,24 +52,30 @@
   }
   /* When the screen is less than 800 pixels wide, hide middle section and blog, show vertical dropdown */
   @media screen and (max-width: 900px) {
-    .nav .mid, .nav .blog{
+    .nav :not(:first-child, :last-child){
       display: none;
     }
     .nav a.icon {
       display: block;
+      float: right;
     }
-    .nav.responsive .mid {
-      display: block;
+    .nav.responsive .blog {
+      float: none;
+    }
+    .nav.responsive a.icon {
+      position: absolute;
+      right: 2vw;
+      top: 0;
     }
     .nav.responsive {
-      display: block;
       height: inherit;
       position: absolute;
     }
-    .nav.responsive .mid a {
+    .nav.responsive :not(:first-child, :last-child) {
       display: block;
-      text-align: left;
-      width: calc(97vw - 20px - 16rem);
+      text-align: right; /* Change text align here */
+      margin-left: 160px;
+      margin-right: 40px;
     }
   }
   </style>
@@ -89,18 +98,16 @@
     </header>
 
     <!-- Mid -->
-    <div class="mid" style="width:fit-content; overflow:hidden; float:left">
-      <a href="#about me">About Me</a>
-      <a href="#experience">Experience</a>
-      <a href="#education">Education</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
-    </div>
+    <a href="#about me">About Me</a>
+    <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+    <a style="background-color: #17A589" class="blog" href="#blog">Blog</a>
 
-    <!-- Blog -->
-    <a style="float:right; background-color: #17A589;" class="blog" href="#blog">Blog</a>
-    <a style="float:right" href="javascript:void(0)" class="icon" onclick="myFunction()">&#9776;</a>
+    <!-- Button -->
+    <a href="javascript:void(0)" class="icon" onclick="myFunction()">&#9776;</a>
   </div>
   <!-- The navigation bar -->
 
