@@ -11,7 +11,10 @@
   <meta http-equiv="X-UA-Compatible" content="ie=chrome">
   <!-- <link rel="preload" href="./fonts/FiraGO-Regular.latin.woff2" as="font" crossorigin="anonymous"> -->
   <link href="./build.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <title>Josh Wood — Resume</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
   <!-- Style of the navigation bar -->
   <!-- Adjust the paddings here -->
@@ -50,6 +53,45 @@
   .nav a.icon {
     display: none;
   }
+
+  /* to top button scroll the page up to the top */
+  #to-top-button {
+    display: inline-block;
+    background-color: #cc002b;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    border-radius: 4px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    transition: background-color .3s, 
+      opacity .5s, visibility .5s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+  }
+  #to-top-button::after {
+    content: "\f077";
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 2em;
+    line-height: 50px;
+    color: #fff;
+  }
+  #to-top-button:hover {
+    cursor: pointer;
+    background-color: rgb(75, 85, 99);
+  }
+  #tot-top-button:active {
+    background-color: rgb(75, 85, 99);
+  }
+  #to-top-button.show {
+    opacity: 1;
+    visibility: visible;
+  }
+
   /* When the screen is less than 800 pixels wide, hide middle section and blog, show vertical dropdown */
   @media screen and (max-width: 900px) {
     .nav :not(:first-child, :last-child){
@@ -92,6 +134,9 @@
 </head>
 
 <body>
+  <!-- To Top Button -->
+  <a id="to-top-button"></a>
+
   <div class="nav" id="nav">
     <!-- Name -->
     <header class="flex items-center" style="float:left; font-family: FiraGO">
@@ -108,16 +153,16 @@
     </header>
 
     <!-- Mid -->
-    <a href="#about me">About Me</a>
-    <a href="#experience">Experience</a>
-    <a href="#education">Education</a>
-    <a href="#projects">Projects</a>
-    <a href="#skills">Skills</a>
-    <a href="#contact">Contact</a>
-    <a style="background-color: #cc002b" class="blog" href="#blog">Blog</a>
+    <a href="#about me" onclick="navToggle()">About Me</a>
+    <a href="#experience" onclick="navToggle()">Experience</a>
+    <a href="#education" onclick="navToggle()">Education</a>
+    <a href="#projects" onclick="navToggle()">Projects</a>
+    <a href="#skills" onclick="navToggle()">Skills</a>
+    <a href="#contact" onclick="navToggle()">Contact</a>
+    <a style="background-color: #cc002b" class="blog"  href="#blog" onclick="navToggle()">Blog</a>
 
     <!-- Button -->
-    <a href="javascript:void(0)" class="icon" onclick="myFunction()">&#9776;</a>
+    <a href="javascript:void(0)" class="icon" onclick="navToggle()">&#9776;</a>
   </div>
   <!-- The navigation bar -->
 
@@ -518,7 +563,7 @@
 
   <script>
     /* Switches between normal and responsive navigation bar */
-    function myFunction() {
+    function navToggle() {
       var x = document.getElementById("nav");
       if (x.className === "nav") {
         x.className += " responsive";
@@ -526,6 +571,21 @@
         x.className = "nav";
       }
     }
+
+    var btn = $('#to-top-button');
+    
+    $(window).scroll(function() {
+      if ($(window).scrollTop() > 200) {
+        btn.addClass('show');
+      } else {
+        btn.removeClass('show');
+      }
+    });
+    
+    btn.on('click', function(e) {
+      e.preventDefault();
+      $('html, body').animate({scrollTop:0}, '300');
+    });
   </script>
 
 </body>
