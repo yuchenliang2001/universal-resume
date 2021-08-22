@@ -70,6 +70,16 @@
     .nav.responsive {
       height: inherit;
       position: absolute;
+      animation: fadeInAnimation ease 0.5s;
+      animation-iteration-count: 1;
+    }
+    @keyframes fadeInAnimation {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
     }
     .nav.responsive :not(:first-child, :last-child) {
       display: block;
